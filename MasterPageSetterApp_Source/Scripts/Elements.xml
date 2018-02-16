@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Scripts">
+    <File Path="Scripts\RibbonActions.js" Url="Scripts/RibbonActions.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-1.7.1.min.js" Url="Scripts/jquery-1.7.1.min.js" ReplaceContent="TRUE" />
+  </Module>
+</Elements>

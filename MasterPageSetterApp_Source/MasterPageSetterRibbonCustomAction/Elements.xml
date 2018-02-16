@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="54cb7d27-e8bc-45b6-b3f6-03ca34a2bf30.MasterPageSetterRibbonCustomAction"
+                RegistrationType="List"
+                RegistrationId="116"
+                Location="CommandUI.Ribbon"
+                Sequence="10001"  
+                Title="Working on it..." HostWebDialog="true" HostWebDialogWidth="300" HostWebDialogHeight="300">
+    <CommandUIExtension>     
+      <CommandUIDefinitions>
+        <CommandUIDefinition Location="Ribbon.Documents.Share.Controls._children">
+          <Button Id="Ribbon.Documents.Share.MasterPageSetterCustomRibbonButton"
+                  Alt="Set as Default Master"
+                  Sequence="100"
+                  Command="Invoke_MasterPageSetterCustomRibbonButtonRequest"
+                  LabelText="Set as Default Master"
+                  TemplateAlias="o1"
+                  Image32by32="_layouts/15/images/placeholder32x32.png"
+                  Image16by16="_layouts/15/images/placeholder16x16.png" />
+        </CommandUIDefinition>
+      </CommandUIDefinitions>
+      <CommandUIHandlers>
+        <CommandUIHandler Command="Invoke_MasterPageSetterCustomRibbonButtonRequest" CommandAction="~appWebUrl/Pages/Default.aspx?{StandardTokens}&amp;Source={Source}&amp;ListURLDir={ListUrlDir}&amp;SelectedListID={SelectedListId}&amp;SelectedItemID={SelectedItemId}" EnabledScript="javascript:makeAvailable();function makeAvailable() {var enable = true; var context = SP.ClientContext.get_current(); var selection = SP.ListOperation.Selection.getSelectedItems(context); if (CountDictionary(selection) == 1) {this.enable = true;} else {return false;} var item; for (item in selection) {if (selection[item].fsObjType != 0) { enable = false; } }return enable; }" />
+      </CommandUIHandlers>
+    </CommandUIExtension >
+    <UrlAction Url="~appWebUrl/Pages/Default.aspx?{StandardTokens}&amp;Source={Source}&amp;ListURLDir={ListUrlDir}&amp;SelectedListID={SelectedListId}&amp;SelectedItemID={SelectedItemId}"/>
+  </CustomAction> 
+</Elements>
